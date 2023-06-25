@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <title>Interactive card details form</title>
+
+  
+</head>
+<body>
+
+  <main class="container">
+        <div class="card-container">
+          <div class="card-div">
+            <div class="card-back">
+              <p class="back-card-num">000</p>
+            </div>
+            <div class="card-front">
+              <p class="front-card-num">0000 0000 0000 0000</p>
+              <div class="front-card-info">
+                <p class="front-card-name">Jane Appleseed</p>
+                <p class="front-card-date"><span class="month">00</span>/ <span class="year">00</span> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <form action="/" method="GET" class="info-container" novalidate>
+          
+            <label for="name" id="name-lbl" class="info-lbl">Cardholder Name</label>
+          <input id="name" class="name-inp" maxlength="34" type="text" placeholder="e.g. Jane Appleseed">
+          <p class="error-msg error-name"></p>
+          
+          
+            <label for="num" id="num-lbl" class="info-lbl">Card Number</label>
+          <input id="num" class="num-inp" type="text" maxlength="19" placeholder="e.g. 1234 5678 9123 0000">
+          <p class="error-msg error-num"></p>
+          
+          <div class="info-container-date">
+            <div class="date-div">
+              <label for="date" class="info-lbl">Exp. Date (MM/YY)</label>
+              <div class="date-inp-div">
+                <div class="error-div">
+                  <input type="text" placeholder="MM" name="month" class="month-inp" maxlength="2" id="date">
+                <p class="error-msg error-date"></p>
+                </div>
+                <input type="text" placeholder="YY" name="year" class="year-inp" maxlength="2" id="date">
+              </div>
+            </div>
+            <div class="cvc-div">
+              <label for="cvc" class="info-lbl">CVC</label>
+              <input id="cvc" class="cvc-inp" type="text" maxlength="3" placeholder="e.g. 123">
+              <p class="error-msg error-cvc"></p>
+            </div>
+          </div>
+          <button type="submit" class="btn main-btn">Confirm</button>
+        </form>
+        
+
+        <div class="popup-container hidden">
+            <img src="icon-complete.svg" alt="complete-icon">
+            <div class="popup-text-div">
+              <h1>Thank you!</h1>
+              <p>We've added your card details</p>
+            </div>
+            <button type="submit" class="btn popup-btn">Continue</button>
+        </div>
+  </main>
+  
+
+  
+  
+</body>
+</html>
